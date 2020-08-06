@@ -36,9 +36,9 @@ public abstract class  Products
     public int ProductB() { return 30; }	
     public int ProductC() { return 20; }		
 	public int ProductD() { return 15; }
-	//public int ProductAAA() { return 130; }
-	//public int ProductBB() { return 45; }
-	//public int ProductCD() { return 30; }	
+	public int ProductAAA() { return -20; }
+	public int ProductBB() { return -15; }
+	public int ProductCD() { return -5; }	
  
 }
 
@@ -76,19 +76,19 @@ public class GetProducts : Products
 		{
 			if (prdstring.IndexOf("AAA")>=0)
 			{
-				total-=20;
+				total+=ProductAAA();
 				prdstring=prdstring.Remove(prdstring.IndexOf("AAA"),3);
 				
 			}
 			if (prdstring.IndexOf("BB")>=0)
 			{
-				total-=15;
+				total+=ProductBB();
 				prdstring=prdstring.Remove(prdstring.IndexOf("BB"),2);
 				
 			}
 			if (prdstring.IndexOf("CD")>=0)
 			{
-				total-=5;
+				total+=ProductCD();
 				prdstring=prdstring.Remove(prdstring.IndexOf("CD"),2);
 				
 			}
