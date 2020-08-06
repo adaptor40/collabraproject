@@ -5,13 +5,13 @@ public class Program : GetProducts
 {
 	public static void Main()
 	{
-		Console.WriteLine("Hello Please enter number of product you want");
+		Console.WriteLine("Hello Please enter number of product you want(A/B/C/D/AAA/BB/CD)");
 		int num = Convert.ToInt16(Console.ReadLine());
 		int total=0;
 		GetProducts getp=new GetProducts();
 		for (int i=0;i<num;i++)
 		{
-			Console.Write("Hello Please enter your product {0}(A-D)",i);
+			Console.Write("Hello Please enter your product {0}: ",i);
 			string prod = Console.ReadLine();
 			int price =getp.GetProductCost(prod);
 			total+=price;
@@ -30,8 +30,8 @@ public abstract class  Products
     public int ProductB() { return 30; }	
     public int ProductC() { return 20; }		
 	public int ProductD() { return 15; }
-	public int ProductAB() { return 130; }
-	public int ProductBC() { return 45; }
+	public int ProductAAA() { return 130; }
+	public int ProductBB() { return 45; }
 	public int ProductCD() { return 30; }	
  
 }
@@ -50,10 +50,10 @@ public class GetProducts : Products
 				return ProductC();
 			case "D":
 				return ProductD();
-			case "AB":
-				return ProductAB();
-			case "BC":
-				return ProductBC();
+			case "AAA":
+				return ProductAAA();
+			case "BB":
+				return ProductBB();
 			case "CD":
 				return ProductCD();
 		}
